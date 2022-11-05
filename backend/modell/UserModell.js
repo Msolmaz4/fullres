@@ -5,7 +5,7 @@ const { Schema } = mongoose
 
 
 const userSchema = new Schema({
-    userName:{
+    username:{
         type:String,
         required:true
     },
@@ -19,11 +19,10 @@ const userSchema = new Schema({
         type:String,
         required:true
     }
-    ,
-    date: { type: Date, default: Date.now },
+   
     
    
   });
 
   const User =mongoose.model('User',userSchema)
-  export default User
+  module.exports = User

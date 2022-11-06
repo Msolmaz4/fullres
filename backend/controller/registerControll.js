@@ -12,9 +12,9 @@ const registerControll = async(req,res)=>{
 
     try
      {
-        //if(!username ||!email || password ) return res.send('bosluklaru doldurun')
-       // const emailCont = await User.findOne({ email :email })
-      //  if(emailCont) return res.send('kullanici var')
+       // if(!username ||!email || password ) return res.send('bosluklaru doldurun')
+       const emailCont = await User.findOne({ email :email })
+       if(emailCont) return res.send('kullanici var')
         const newUser  = await new User({
             username:username,
             email:email,

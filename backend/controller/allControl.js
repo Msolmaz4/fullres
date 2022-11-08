@@ -1,12 +1,14 @@
 const Products = require('../modell/ProductModel.js')
+const mongoose = require('mongoose')
 
 
-const allControl = (req,res)=>{
+const allControl = async (req,res)=>{
 
 
     try {
 
-        const all = Products.find({})
+        const all = await Products.find()
+        console.log(all)
 
         res.status(200).json({
             message:'succed',

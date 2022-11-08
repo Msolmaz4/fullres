@@ -1,5 +1,5 @@
 const Products = require('../modell/ProductModel.js')
-const mongoose = require('mongoose')
+
 
 
 const allControl = async (req,res)=>{

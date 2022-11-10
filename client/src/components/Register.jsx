@@ -3,7 +3,8 @@ import './register.css'
 
 const Register = () => {
   return (
-    <div className='register-box'>
+    <div className='register1'>
+<div className='register-box'>
         <h2>Register</h2>
         <form >
             <div className='user-box'>
@@ -12,7 +13,7 @@ const Register = () => {
             </div>
             <div className='user-box'>
                 <input type='email' name='' required />
-                <label > Eamil</label>
+                <label > Email</label>
             </div>
             <div className='user-box'>
                 <input type='password' name='' required />
@@ -22,7 +23,7 @@ const Register = () => {
                 <a id='submit' href='.//'>Submit</a>
                 <div id='register'>
                     Dont have an account?
-                    <a href=".////">Register</a>
+                    <a href=".////">LOGIN</a>
                 </div>
 
             </div>
@@ -31,6 +32,8 @@ const Register = () => {
 
 
     </div>
+    </div>
+    
   )
 }
 

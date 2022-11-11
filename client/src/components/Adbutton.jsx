@@ -4,7 +4,7 @@ import './button.css'
 const Adbutton = () => {
   return (
     <div>
-        <button>ADD</button>
+        <button className='add-button'>ADD</button>
     </div>
   )
 }

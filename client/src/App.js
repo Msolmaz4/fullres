@@ -4,12 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Cart from "./components/Cart";
-import { AuthContext } from "./Auth/Auth";
+import { UserProvider } from "./Auth/Auth";
 
 function App() {
   return (
-    <AuthContext>
-    <BrowserRouter>
+    <UserProvider>
+ <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Register />} />
@@ -17,7 +17,9 @@ function App() {
         <Route path="*" element="malesef" />
       </Routes>
     </BrowserRouter>
-    </AuthContext>
+    </UserProvider>
+   
+   
   );
 }
 

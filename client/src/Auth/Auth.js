@@ -1,21 +1,41 @@
 
 import {createContext} from 'react'
-
 import axios from 'axios'
+
+
 export const  AuthContext = createContext()
 export const UserProvider = ({children})=>{
 
 
-    const register = (e,user)=>{
-        console.log(register, user)
-        e.preventDefault()
-        axios.post('http://localhost:8006/users/register',user)
-        .then(res=>console.log(res))
-        .catch(err=>console.log(err))}
+
+    const register = (userName,email,password)=>{
+       // console.log(userName,email,password)
+
+     
+
+        
+     
+  
+      }
+
+    const login = async (email,password)=>{
+        
+      console.log(email,password)
+      await   axios.post('http://localhost:3900/users/login',{
+            email,password
+        })
+       
+     
+
+
+
+
+
+    }  
 
 
         return(
-            <AuthContext.Provider value={{register}}>
+            <AuthContext.Provider value={{register,login}}>
                 {children}
             </AuthContext.Provider>
 

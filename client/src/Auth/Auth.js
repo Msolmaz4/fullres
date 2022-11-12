@@ -24,6 +24,8 @@ export const UserProvider = ({children})=>{
       await   axios.post('http://localhost:3900/users/login',{
             email,password
         })
+        .then(res=>console.log(res.data))
+        .catch(err=>console.log(err))
        
      
 

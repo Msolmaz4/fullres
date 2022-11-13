@@ -12,12 +12,12 @@ const Register = () => {
     const {register} = useContext(AuthContext)
  
     const [email,setEmail] =useState('')
-    const [userName,setUserName] =useState('')
+    const [username,setUsername] =useState('')
     const [password,setPassword] =useState('')
      
     const handle1 = (e)=>{
         e.preventDefault()
-        register(userName,email,password)
+        register(username,email,password)
          
         
 
@@ -30,7 +30,7 @@ const Register = () => {
         <h2>Register</h2>
         <form onSubmit={handle1}>
           <div className="user-box">
-            <input type="text" name="" value={userName} onChange={(e)=>setUserName(e.target.value)} required />
+            <input type="text" name="" value={username} onChange={(e)=>setUsername(e.target.value)} required />
             <label> UserName</label>
           </div>
           <div className="user-box">

@@ -1,17 +1,18 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Cart from "./components/Cart";
+import Carts from "./components/Carts";
 import { UserProvider } from "./Auth/Auth";
 import Public from "./routes/Private";
 import Private from "./routes/Private";
 
 function App() {
   return (
-    <UserProvider>
- <BrowserRouter>
+   
+ <Router>
+   <UserProvider>
       <Routes>
 
         <Route element={<Public/>}>
@@ -20,13 +21,14 @@ function App() {
         </Route>
        
         <Route element={<Private/>}> 
-        <Route path="cart" element={<Cart />} />
+        <Route path="carts" element={<Carts />} />
         </Route>
         
         <Route path="*" element="malesef" />
       </Routes>
-    </BrowserRouter>
-    </UserProvider>
+      </UserProvider>
+    </Router>
+    
    
    
   );

@@ -1,7 +1,7 @@
 
 import {createContext, useState} from 'react'
 import { useNavigate } from "react-router-dom";
-//navigate hata veriyor 
+
 import axios from 'axios'
 import { useEffect } from 'react'
 
@@ -10,7 +10,7 @@ export const  AuthContext = createContext()
 export const UserProvider = ({children})=>{
 
     const [ isAuthenticated,setisAuthenticated] = useState(true)
-   // const navi = useNavigate()
+ 
    const navigate = useNavigate();
    const [users,setUsers] = useState()
    console.log(users)
@@ -19,7 +19,8 @@ export const UserProvider = ({children})=>{
     const token = localStorage.getItem('token')
     token && checOut(token)
    },[])
-
+    
+   
 
    const checOut = async(token)=>{
     console.log('checOut',token)

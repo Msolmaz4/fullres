@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken')
 
 
-const isLogin = async (req,res,next)=>{
+const isLogin =  (req,res,next)=>{
 
     try {
         const {token} =req.headers
-        jwt.verify(token,process.env.AUTH_SEC_KEY,(err,decoded)=>{
+        jwt.verify(token,process.env.AUTH_SEC,(err,decoded)=>{
             if(err) return res.status(403).send('check out payladi') 
             req.token = token
             next()
@@ -14,7 +14,7 @@ const isLogin = async (req,res,next)=>{
 
         
     } catch (error) {
-        
+        console.log('isLogin',error)        
     }
 
 }

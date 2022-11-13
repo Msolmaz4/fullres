@@ -6,8 +6,9 @@ const allControl = async (req,res)=>{
 
 
     try {
+        
 
-        const all = await Products.find()
+        const all = await Products.find().limit(20)
         console.log(all)
 
         res.status(200).json({

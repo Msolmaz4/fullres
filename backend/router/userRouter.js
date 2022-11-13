@@ -6,7 +6,7 @@ const isLogin = require('../midelwars/isLogin.js')
 
 
 router.post('/register',registerControll)
-router.post('/login',isLogin,loginControll)
+router.post('/login',loginControll)
 
 
 

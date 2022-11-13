@@ -19,11 +19,8 @@ const loginControll = async(req,res)=>{
             message:'succes',
             data:emailControl,
             token:userToken
-
-          }
-
-
-          )
+          })
+          
         
     } catch (error) {
         console.log(error)

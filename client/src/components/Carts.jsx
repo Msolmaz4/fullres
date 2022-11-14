@@ -20,6 +20,14 @@ const Carts = () => {
 
   },[])
 
+   const delet = async(id)=>{
+    console.log('cartdelte',id)
+    await axios.delete(`http://localhost:3900/products/product/${id}`)
+    .then((res)=>console.log(res.data.data))
+
+
+   }
+  
 
 
   return (
@@ -29,7 +37,10 @@ const Carts = () => {
  data?.map((el)=>(
   <div>
 
-<Cart data={el}/>
+<Cart data={el}
+ delet={delet}
+ id={el._id}
+/>
   </div>
  
  )) 

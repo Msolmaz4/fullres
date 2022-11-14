@@ -7,6 +7,7 @@ import Carts from "./components/Carts";
 import { UserProvider } from "./Auth/Auth";
 import Public from "./routes/Private";
 import Private from "./routes/Private";
+import Add from "./components/Add";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
        
         <Route element={<Private/>}> 
         <Route path="carts" element={<Carts />} />
+        <Route path="add" element={<Add />} />
         </Route>
         
         <Route path="*" element="malesef" />

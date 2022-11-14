@@ -1,0 +1,20 @@
+.add{
+    border: 2px solid red;
+   
+   
+}
+#text{
+ border: 2px solid greenyellow;
+ 
+}
+.add12{
+    margin-top: 20px;
+    height: 30px;
+    width: 80px;
+
+}
+.add123{
+    margin-top: 20px;
+    height: 40px;
+    width: 100px;
+}

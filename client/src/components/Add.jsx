@@ -1,21 +1,34 @@
 import React from 'react'
 import { useState } from 'react'
 import './add.css'
+//dosya yuklemek icin multer kurduk
+import axios from 'axios'
 
 const Add = () => {
-  const[erde,setErde]=useState()
+  const[desc,setDesc]=useState()
+  const [img,setImg]= useState()
 
-    console.log(erde)
+  const send = ()=>{
+    console.log(desc,img)
+
+    axios.post('http://localhost:3900/products/product',{
+      desc,img
+    }).then((res)=>console.log(res))
+
+
+  }
+
+    
   return (
     <div className='add'>
         <div className="add1">
-            <textarea name="" id="text" cols="30" rows="10" value={erde} onChange={(e)=>setErde(e.target.value)}></textarea>
+            <textarea name="" id="text" cols="30" rows="10" value={desc} onChange={(e)=>setDesc(e.target.value)}></textarea>
             </div>
             <div>
-            <button className='add12'>Img</button>
+              <input type="file"  accept='.jpg' onChange={(e)=>setImg(e.target.value)}/>
             </div>
             <div>
-            <button className='add123'>Send</button>
+            <button className='add123' onClick={send}>Send</button>
             </div>
            
        

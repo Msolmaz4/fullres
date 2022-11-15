@@ -12,7 +12,7 @@ const addControll = async (req,res)=>{
             })
            
             newMall.save()
-           
+            console.log('hey')
             res.status(200).json({
                 message:'basarilar'
             })

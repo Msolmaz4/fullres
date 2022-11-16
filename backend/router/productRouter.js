@@ -6,6 +6,9 @@ const getaControl = require('../controller/aControl')
 const addControll = require('../controller/addControll')
 const deleteControll =require('../controller/deleteControl')
 const updateUpload = require('../controller/updateUpload')
+const multer = require("multer");
+const add = multer()
+
 
 
 

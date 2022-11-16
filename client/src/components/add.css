@@ -1,5 +1,7 @@
 .add{
     border: 2px solid red;
+    color: black;
+
    
    
 }
@@ -11,6 +13,7 @@
     margin-top: 20px;
     height: 30px;
     width: 80px;
+    color: black;
 
 }
 .add123{

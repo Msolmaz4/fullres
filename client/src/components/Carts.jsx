@@ -10,6 +10,8 @@ import { AuthContext } from '../Auth/Auth'
 
 
 
+
+
 const Carts = () => {
 
   const [data,setData] = useState()
@@ -37,7 +39,10 @@ const Carts = () => {
 
 
    }
-  
+  const  upload = async(id)=>{
+    console.log('uploadd',id)
+
+  }
   
 
   return (
@@ -52,6 +57,7 @@ const Carts = () => {
 <Cart data={el}
  delet={delet}
  id={el._id}
+ upload={upload}
 />
   </div>
  

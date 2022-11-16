@@ -3,11 +3,13 @@ const Products = require("../modell/ProductModel");
 
 const addControll = async (req, res) => {
   try {
-    const { desc, img } = req.body;
+    const { desc, img ,title} = req.body;
+    console.log(desc,img,title)
 
     const newMall = await new Products({
       desc: desc,
       img: img,
+      title:title
     });
 
     newMall.save();

@@ -3,10 +3,13 @@ import { useState } from 'react'
 import './add.css'
 //dosya yuklemek icin multer kurduk
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+//add komutu yaptik sonra backebd tarafindann multer yapilir dikkat et
 
 const Add = () => {
   const[desc,setDesc]=useState()
   const [img,setImg]= useState()
+  const navi = useNavigate()
 
   const send = ()=>{
     console.log(desc,img)
@@ -14,6 +17,8 @@ const Add = () => {
     axios.post('http://localhost:3900/products/product',{
       desc,img
     }).then((res)=>console.log(res))
+    navi('/carts')
+
 
 
   }

@@ -5,20 +5,30 @@ import Cart from './Cart'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
+import { useContext } from 'react'
+import { AuthContext } from '../Auth/Auth'
+
 
 
 const Carts = () => {
 
   const [data,setData] = useState()
+  const {key}= useContext(AuthContext)
+  console.log('cart',key)
+
+  
+ 
+  
+  
 
 
 
   useEffect(()=>{
       
-    axios.post('http://localhost:3900/products')
+    axios.post('http://localhost:3900/products',{key})
     .then((res)=>setData(res.data.data))
 
-  },[])
+  },[key])
 
    const delet = async(id)=>{
     console.log('cartdelte',id)
@@ -28,11 +38,13 @@ const Carts = () => {
 
    }
   
-
+  
 
   return (
     <div>
-        <Search/>
+        <Search
+   
+      />
         {
  data?.map((el)=>(
   <div>

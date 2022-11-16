@@ -8,7 +8,8 @@ import { useEffect } from 'react'
 
 export const  AuthContext = createContext()
 export const UserProvider = ({children})=>{
-
+    
+     const [key,setKey]= useState()
     const [ isAuthenticated,setisAuthenticated] = useState(true)
  
    const navigate = useNavigate();
@@ -65,8 +66,14 @@ export const UserProvider = ({children})=>{
 }  
 
 
+const searc =(e)=>{
+    e.preventDefault()
+    
+}
+
+
         return(
-            <AuthContext.Provider value={{register,login,isAuthenticated}}>
+            <AuthContext.Provider value={{register,login,isAuthenticated ,searc,setKey,key}}>
                 {children}
             </AuthContext.Provider>
 

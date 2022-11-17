@@ -17,6 +17,8 @@ function Cart({data,delet,id,upload}) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const[desc ,setDesc]= useState()
+  const [img ,setImg] = useState()
 
   
 
@@ -25,8 +27,9 @@ const handle3 = (id)=>{
   delet(id)
 
 }
-const handle4 =(id)=>{
-upload(id)
+const handle4 =(e)=>{
+  e.preventDefault()
+upload(id,desc,img)
 }
 
 
@@ -41,21 +44,23 @@ upload(id)
           <Modal.Title>{data.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handle4}>
             
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label></Form.Label>
-              <Form.Control as="textarea" rows={3} placeholder={data.desc} />
+              <Form.Control as="textarea" rows={3} placeholder={data.desc} 
+              value={desc} 
+              onChange={(e)=>setDesc(e.target.value)} />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
          
-        <input type="file"  accept='.jpg' />
-          <Button variant="primary" onClick={handleClose}>
+        <input type="file"  accept='.jpg' onChange={(e)=>setImg(e.target.value)} />
+          <Button variant="primary" onClick={handle4}>
             Save Changes
           </Button>
         </Modal.Footer>

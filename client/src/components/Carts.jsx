@@ -7,6 +7,8 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { AuthContext } from '../Auth/Auth'
+import { useNavigate } from 'react-router-dom'
+
 
 
 
@@ -16,6 +18,7 @@ const Carts = () => {
 
   const [data,setData] = useState()
   const {key}= useContext(AuthContext)
+  const navi =useNavigate()
   console.log('cart',key)
 
   
@@ -39,8 +42,14 @@ const Carts = () => {
 
 
    }
-  const  upload = async(id)=>{
-    console.log('uploadd',id)
+  const upload = async(id,desc,img)=>{
+    console.log('uploaaaaaaaaaaaaa',id,desc,img)
+    axios.patch(`http://localhost:3900/products/product/${id}`,{
+      desc,img
+    })
+   
+    .then((res)=>console.log(res.data.data))
+   
 
   }
   

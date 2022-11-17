@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { AuthContext } from '../Auth/Auth'
-import { useNavigate } from 'react-router-dom'
+
 
 
 
@@ -18,6 +18,8 @@ const Carts = () => {
 
   const [data,setData] = useState()
   const {key}= useContext(AuthContext)
+  
+
   
   console.log('cart',key)
 
@@ -33,7 +35,7 @@ const Carts = () => {
     axios.post('http://localhost:3900/products',{key})
     .then((res)=>setData(res.data.data))
 
-  },[key])
+  },[key,data])
 
    const delet = async(id)=>{
     console.log('cartdelte',id)
@@ -47,7 +49,8 @@ const Carts = () => {
     axios.patch(`http://localhost:3900/products/product/${id}`,{
       desc,img
     })
-   
+    
+
     .then((res)=>console.log(res.data.data))
    
 

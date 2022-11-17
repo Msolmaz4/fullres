@@ -18,7 +18,7 @@ const Carts = () => {
 
   const [data,setData] = useState()
   const {key}= useContext(AuthContext)
-  const navi =useNavigate()
+  
   console.log('cart',key)
 
   

@@ -16,8 +16,8 @@ const dene = () => {
         </p>
       </div>
       <div className="button-wrapper">
-        <div className="btn-outline">DELETE</div>
-        <div className="button-fill">UPLOAD</div>
+        <div className="btn outline">DELETE</div>
+        <div className="btn fill">UPLOAD</div>
       </div>
     </div>
     </div>

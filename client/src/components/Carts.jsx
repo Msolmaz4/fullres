@@ -49,11 +49,14 @@ const Carts = () => {
   return (
     <div>
       <Search />
+      <div>
       {data?.map((el) => (
-        <div>
+        <div className="carts_ana">
           <Cart data={el} delet={delet} id={el._id} upload={upload} />
         </div>
       ))}
+      </div>
+     
 
       <Adbutton />
     </div>

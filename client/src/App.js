@@ -7,7 +7,8 @@ import Carts from "./components/Carts";
 import { UserProvider } from "./Auth/Auth";
 import Public from "./routes/Private";
 import Private from "./routes/Private";
-import Add from "./components/Add";
+import Add from "./components/Add"
+import Dene2 from "./components/Dene2";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
 
         <Route element={<Public/>}>
         <Route path="/login" element={<Login />} />
+        <Route path="/deneme" element={<Dene2 />} />
+
         <Route path="/" element={<Register />} />
         </Route>
        

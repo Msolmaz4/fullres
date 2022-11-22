@@ -12,6 +12,9 @@ app.use(cors())
 
 app.use(express.urlencoded({ extended :false}))
 app.use(express.json())
+//dosya yuklemek icin 
+//const path =require('path')
+//app.use('/uploads',express.static(path.join(__dirname,'uploads')))
 
 app.use('/users',userRouter)
 app.use('/products',productRouter)

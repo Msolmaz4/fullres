@@ -1,8 +1,8 @@
-const Products = require("../modell/ProductModel")
-const { get } = require('mongoose')
-const { findByIdAndUpdate } = require('../modell/ProductModel')
+const Products = require("../modell/ProductModel");
+const { get } = require("mongoose");
+const { findByIdAndUpdate } = require("../modell/ProductModel");
 
-// findByIdAndUpdate iki parametre aliyor degistirecegimiy id aldik 
+// findByIdAndUpdate iki parametre aliyor degistirecegimiy id aldik
 //runVali  benim koydugum kuralar gecerli osun diye new yeniyi dondursdsun
 //{runValidators:true, new:true} bunu yapmadan da calisiyor
 
@@ -21,33 +21,28 @@ const { findByIdAndUpdate } = require('../modell/ProductModel')
         })
 */
 
-const updateUpload = async (req,res)=>{
+const updateUpload = async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log(id);
+    const { desc, img } = req.body;
 
-   
-    try {
-        const {id} = req.params
-        console.log(id)
-        const {desc,img} =req.body
-        
-        const produ = await Products.findByIdAndUpdate(id,{
-            desc:desc,
-            img:img
-        },{runValidators:true, new:true})
-        console.log(produ)
-        res.status(200).json({
-            data:produ,
-            message:'iyisin'
-        })
-    
-      
-    
+    const produ = await Products.findByIdAndUpdate(
+      id,
+      {
+        desc: desc,
+        img: img,
+      },
+      { runValidators: true, new: true }
+    );
 
+    res.status(200).json({
+      data: produ,
+      message: "iyisin",
+    });
+  } catch (error) {
+    //console.log(error);
+  }
+};
 
-   
-        
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-module.exports =updateUpload
+module.exports = updateUpload;

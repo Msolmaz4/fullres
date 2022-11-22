@@ -12,6 +12,10 @@ const add = multer()
 
 
 
+
+
+
+
 router.post('/',allControl)
 router.post('/product/:id',getaControl)
 router.post('/product',addControll)

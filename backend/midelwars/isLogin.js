@@ -14,7 +14,7 @@ const isLogin =  (req,res,next)=>{
 
         
     } catch (error) {
-        console.log('isLogin',error)        
+       // console.log('isLogin',error)        
     }
 
 }
